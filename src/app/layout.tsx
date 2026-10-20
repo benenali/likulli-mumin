@@ -1,10 +1,18 @@
 import type { Metadata, Viewport } from "next";
+import ServiceWorkerRegistration from "@/components/service-worker-registration";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "لكل مؤمن",
   description: "رفيقك اليومي للقرآن والعبادات والأذكار بمصادر موثوقة.",
   applicationName: "لكل مؤمن",
+  manifest: "/manifest.webmanifest",
+  icons: { icon: "/icon.svg" },
+  appleWebApp: {
+    capable: true,
+    title: "لكل مؤمن",
+    statusBarStyle: "default",
+  },
 };
 
 export const viewport: Viewport = {
@@ -20,7 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl">
-      <body>{children}</body>
+      <body>
+        <ServiceWorkerRegistration />
+        {children}
+      </body>
     </html>
   );
 }

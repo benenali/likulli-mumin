@@ -1,0 +1,21 @@
+{
+  "id": "/",
+  "name": "لكل مؤمن",
+  "short_name": "لكل مؤمن",
+  "description": "رفيقك اليومي للقرآن والعبادات والأذكار بمصادر موثوقة.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7f6f0",
+  "theme_color": "#0d5b46",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
