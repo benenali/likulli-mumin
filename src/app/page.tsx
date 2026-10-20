@@ -1,4 +1,5 @@
 import Link from "next/link";
+import LocalSettings from "@/components/local-settings";
 
 const plannedSections = [
   { title: "القرآن الكريم", description: "قراءة وحفظ موضع القراءة — بعد اعتماد مصدر النص." },
@@ -15,7 +16,10 @@ export default function HomePage() {
           <span className="brand-mark" aria-hidden="true">ك</span>
           <span>لكل مؤمن</span>
         </Link>
-        <span className="status-label">نسخة تأسيسية</span>
+        <div className="topbar-actions">
+          <LocalSettings />
+          <span className="status-label">نسخة تأسيسية</span>
+        </div>
       </header>
 
       <section className="hero" aria-labelledby="hero-title">
