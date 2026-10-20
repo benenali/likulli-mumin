@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const plannedSections = [
   { title: "القرآن الكريم", description: "قراءة وحفظ موضع القراءة — بعد اعتماد مصدر النص." },
   { title: "مواقيت الصلاة", description: "تُحدد بعد اختيار طريقة الحساب وإعدادات الموقع." },
@@ -9,10 +11,10 @@ export default function HomePage() {
   return (
     <main className="page-shell">
       <header className="topbar">
-        <a className="brand" href="/" aria-label="لكل مؤمن - الصفحة الرئيسية">
+        <Link className="brand" href="/" aria-label="لكل مؤمن - الصفحة الرئيسية">
           <span className="brand-mark" aria-hidden="true">ك</span>
           <span>لكل مؤمن</span>
-        </a>
+        </Link>
         <span className="status-label">نسخة تأسيسية</span>
       </header>
 
