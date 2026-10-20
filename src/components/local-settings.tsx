@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useSyncExternalStore } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 
 type Theme = "light" | "dark";
 type TextSize = "normal" | "large";
@@ -57,6 +57,11 @@ export default function LocalSettings() {
   const [isOpen, setIsOpen] = useState(false);
   const snapshot = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
   const preferences = parsePreferences(snapshot);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = preferences.theme;
+    document.documentElement.dataset.textSize = preferences.textSize;
+  }, [preferences.theme, preferences.textSize]);
 
   function updatePreferences(next: Preferences) {
     document.documentElement.dataset.theme = next.theme;
