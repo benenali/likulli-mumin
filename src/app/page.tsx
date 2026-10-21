@@ -5,7 +5,8 @@ const plannedSections = [
   { title: "القرآن الكريم", description: "قراءة وحفظ موضع القراءة — بعد اعتماد مصدر النص." },
   { title: "مواقيت الصلاة", description: "تُحدد بعد اختيار طريقة الحساب وإعدادات الموقع." },
   { title: "الأذكار والأدعية", description: "محتوى موثق بمراجعه ومصادره." },
-  { title: "أدوات يومية", description: "بدأنا بأداة مسبحة تحفظ العدد محلياً وتعمل دون حساب.", href: "/tasbeeh" },
+  { title: "المسبحة الإلكترونية", description: "عداد بسيط يحفظ العدد محليًا ويعمل دون حساب.", href: "/tasbeeh", actionLabel: "فتح المسبحة" },
+  { title: "خطة ختمة القرآن", description: "وزّع الصفحات على الأيام وتابع إنجاز وردك دون اتصال.", href: "/khatma", actionLabel: "إنشاء خطة ختمة" },
 ];
 
 export default function HomePage() {
@@ -30,7 +31,7 @@ export default function HomePage() {
           وإمكانية الوصول إلى المحتوى المحفوظ دون اتصال.
         </p>
         <p className="notice">
-          المشروع في مرحلة التأسيس. الأقسام غير المكتملة موضحة أدناه، والمسبحة أول أداة فعلية.
+          المشروع في مرحلة التأسيس. الأقسام غير المكتملة موضحة أدناه، والأدوات المتاحة تعمل دون حساب.
         </p>
       </section>
 
@@ -40,7 +41,7 @@ export default function HomePage() {
             <p className="eyebrow">خريطة التطبيق</p>
             <h2 id="sections-title">أقسام التطبيق</h2>
           </div>
-          <span className="section-count">٠٤ أقسام أولية</span>
+          <span className="section-count">٠٥ أقسام أولية</span>
         </div>
         <div className="section-grid">
           {plannedSections.map((section, index) => (
@@ -49,7 +50,7 @@ export default function HomePage() {
               <h3>{section.title}</h3>
               <p>{section.description}</p>
               {section.href ? (
-                <Link className="card-action" href={section.href}>فتح المسبحة ←</Link>
+                <Link className="card-action" href={section.href}>{section.actionLabel} ←</Link>
               ) : (
                 <span className="card-status">قيد التخطيط</span>
               )}
