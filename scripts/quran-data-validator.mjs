@@ -36,9 +36,12 @@ export function validateQuranDataset(dataset, expected = { surahCount: 114, vers
     totalVerses += surah.verses.length;
     for (const [verseIndex, verse] of surah.verses.entries()) {
       const expectedVerseNumber = verseIndex + 1;
-      if (!verse || typeof verse !== "object" || verse.number !== expectedVerseNumber) {
-        errors.push(`Surah ${expectedNumber}: verse at position ${expectedVerseNumber} has an invalid number.`);
+      if (!verse || typeof verse !== "object") {
+        errors.push(`Surah ${expectedNumber}: verse at position ${expectedVerseNumber} must be an object.`);
         continue;
+      }
+      if (verse.number !== expectedVerseNumber) {
+        errors.push(`Surah ${expectedNumber}: verse at position ${expectedVerseNumber} has an invalid number.`);
       }
       if (typeof verse.text !== "string" || !verse.text.trim()) {
         errors.push(`Surah ${expectedNumber}, verse ${expectedVerseNumber} has no text.`);
