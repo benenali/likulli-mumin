@@ -145,7 +145,7 @@ export default function KhatmaPlanner() {
             </div>
             <div className="khatma-stat">
               <span>تقسيم مقترح</span>
-              <strong>نحو {plan.pagesPerPrayer} صفحات بعد كل صلاة</strong>
+              <strong>نحو {Math.max(1, Math.floor(Math.min(...plan.dailyTargets) / 5))}–{Math.ceil(Math.max(...plan.dailyTargets) / 5)} صفحات بعد كل صلاة</strong>
             </div>
           </div>
           <p className="settings-note">
