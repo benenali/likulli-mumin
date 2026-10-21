@@ -14,7 +14,11 @@ export default function TasbeehCounter() {
       const saved = window.localStorage.getItem(STORAGE_KEY);
       if (saved !== null) {
         const parsed = Number(saved);
-        if (Number.isSafeInteger(parsed) && parsed >= 0) setCount(parsed);
+        if (Number.isSafeInteger(parsed) && parsed >= 0) {
+          // Restore browser-only saved state after hydration to avoid a server/client markup mismatch.
+          // eslint-disable-next-line react-hooks/set-state-in-effect
+          setCount(parsed);
+        }
       }
     } catch {
       // The counter remains usable for this session if storage is unavailable.
