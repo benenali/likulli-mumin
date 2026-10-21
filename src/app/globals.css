@@ -130,3 +130,18 @@ button { font: inherit; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* Offline tasbeeh tool */
+.tool-page { min-height: 100vh; }
+.tool-content { max-width: 720px; margin: 0 auto; padding-block: clamp(44px, 8vw, 88px); }
+.tool-content h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.35; }
+.tool-intro { color: var(--muted); line-height: 2; margin: 16px 0 28px; }
+.tasbeeh-card { padding: clamp(22px, 5vw, 42px); border: 1px solid var(--border); border-radius: 24px; background: var(--surface); text-align: center; box-shadow: 0 18px 48px rgba(15, 35, 26, .07); }
+.tasbeeh-label { color: var(--muted); margin: 0; }
+.tasbeeh-count { display: block; font-size: clamp(3.5rem, 13vw, 6rem); font-weight: 700; font-variant-numeric: tabular-nums; color: var(--primary); padding: 16px 0 24px; }
+.tasbeeh-increment { width: min(100%, 320px); min-height: 76px; border: 0; border-radius: 18px; background: var(--primary); color: #fff; font-weight: 700; font-size: 1.2rem; cursor: pointer; }
+.tasbeeh-increment:hover { filter: brightness(1.08); }
+.tasbeeh-actions { display: flex; justify-content: center; margin-top: 16px; }
+.card-action { display: inline-flex; align-items: center; gap: 6px; margin-top: auto; padding: 8px 12px; border-radius: 10px; background: var(--primary-soft); color: var(--primary); font-size: .9rem; font-weight: 700; }
+.tool-caution { margin-top: 22px; color: var(--muted); font-size: .85rem; line-height: 1.9; }
+button:disabled { cursor: not-allowed; opacity: .55; }
